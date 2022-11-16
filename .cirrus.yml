@@ -17,17 +17,17 @@ task:
     memory: 32G
 
   Load-Ccache_background_script:
-     - ./script/load_ccache.sh
+     - ./load_ccache.sh
 
   Sync-rom_script:
      - git config --global user.name "Monu"
      - git config --global user.email "$EMAIL"
      - echo "$credentials" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
-     - ./script/sync.sh
+     - ./sync.sh
      
   Build-rom_script:
-     - ./script/building.sh
+     - ./building.sh
      
   Ccache-info_script:
      - set -e
@@ -35,6 +35,6 @@ task:
      - ccache -s
 
   Upload-build_script:
-     - ./script/ziping.sh
+     - ./ziping.sh
 
 #2
